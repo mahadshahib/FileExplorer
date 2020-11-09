@@ -37,9 +37,9 @@ final class CheckmarkButton: UIButton {
         shapeLayer = CAShapeLayer()
         shapeLayer.contentsScale = UIScreen.main.scale
         shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.white.cgColor
+        shapeLayer.strokeColor = ColorCompatibility.tertiarySystemBackground.cgColor
         shapeLayer.strokeEnd = 0.0
-        shapeLayer.backgroundColor = UIColor.white.cgColor
+        shapeLayer.backgroundColor = ColorCompatibility.secondarySystemBackground.cgColor
         shapeLayer.actions = [
             KeyPath.strokeEnd: NSNull(),
             KeyPath.backgroundColor: NSNull()
@@ -108,13 +108,13 @@ final class CheckmarkButton: UIButton {
         if selected {
             shapeLayer.animate(keyPath: KeyPath.strokeEnd, to: NSNumber(value: 1.0))
             shapeLayer.animate(keyPath: KeyPath.backgroundColor, to: ColorPallete.blue.cgColor)
-            borderColor = UIColor.white
+            borderColor = ColorCompatibility.secondarySystemBackground
         } else {
             CATransaction.begin()
             CATransaction.setAnimationDuration(0.0)
             shapeLayer.animate(keyPath: KeyPath.strokeEnd, to: NSNumber(value: 0.0), duration: 0.0)
             CATransaction.commit()
-            shapeLayer.animate(keyPath: KeyPath.backgroundColor, to: UIColor.white.cgColor)
+            shapeLayer.animate(keyPath: KeyPath.backgroundColor, to: ColorCompatibility.secondarySystemBackground)
             borderColor = ColorPallete.gray
         }
     }

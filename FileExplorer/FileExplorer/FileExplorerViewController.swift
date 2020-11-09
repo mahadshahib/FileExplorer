@@ -101,7 +101,7 @@ public final class FileExplorerViewController: UIViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = ColorCompatibility.secondarySystemBackground
         
         let navigationController = UINavigationController()
         addContentChildViewController(navigationController)

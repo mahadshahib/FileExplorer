@@ -48,7 +48,7 @@ extension UISearchBar {
             } else {
                 let dimmingView = UIView(frame: bounds)
                 dimmingView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                dimmingView.backgroundColor = UIColor.black.withAlphaComponent(0.15)
+                dimmingView.backgroundColor = ColorCompatibility.label.withAlphaComponent(0.15)
                 addSubview(dimmingView)
                 self.dimmingView = dimmingView
             }

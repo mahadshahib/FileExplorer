@@ -159,12 +159,5 @@ public enum ColorCompatibility {
     }
 }
 
-extension CALayer {
-    func addGradient() {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.bounds
-        gradientLayer.colors = [ColorCompatibility.gradEnd.cgColor, ColorCompatibility.gradStart.cgColor]
-        gradientLayer.locations = [0 , 1]
-        self.insertSublayer(gradientLayer, at: 0)
-    }
-}
+
+
