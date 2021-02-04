@@ -81,6 +81,8 @@ extension FileItemPresentationCoordinator: ActionsViewControllerDelegate {
     func actionsViewControllerDidRequestShare(_ controller: ActionsViewController) {
         
         let activityViewController = UIActivityViewController(activityItems: [item.url], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.barButtonItem = controller.activeRightBarButtonItem
+        activityViewController.popoverPresentationController?.sourceView = controller.view
         navigationController?.present(activityViewController, animated: true, completion: nil)
     }
 
